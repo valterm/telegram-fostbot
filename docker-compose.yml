@@ -1,7 +1,9 @@
 version: "3.9"
 services:
   kretanyad:
-    container_name: "kretanyad"
-    image: "circoplomber/kretanyad:v1.2.2"
+    container_name: "fostbot"
+    image: "circoplomber/fostbot:v0.2-debug"
+    build: .
     environment:
     - "TELEGRAM_BOT_TOKEN="
+    - "OPENAI_API_TOKEN="
