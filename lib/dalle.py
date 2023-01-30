@@ -2,7 +2,7 @@ import requests
 import openai
 from .functions import *
 from .insult import *
-from telegram import Update
+from telegram import Update,User
 from telegram.ext import CallbackContext
 import os
 

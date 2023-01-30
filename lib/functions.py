@@ -1,4 +1,4 @@
-from telegram import Update
+from telegram import Update,User
 from telegram.ext import CallbackContext
 import requests
 from random import randint

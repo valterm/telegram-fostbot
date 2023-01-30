@@ -1,5 +1,5 @@
 import json
-from telegram import Update
+from telegram import Update,User
 from telegram.ext import CallbackContext
 from .functions import *
 
