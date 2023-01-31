@@ -5,7 +5,6 @@ from .insult import *
 from .globals import *
 from telegram import Update,User
 from telegram.ext import CallbackContext
-import json
 
 
 openai.api_key=openai_token
@@ -43,7 +42,7 @@ def picme(update: Update, context: CallbackContext):
 def dickpic(update: Update, context: CallbackContext):
     
     r = openai.Image.create(
-    prompt='Closeup of large flesh coloured bald worm with a mushroom shaped head on top of two eggs on a white background',
+    prompt='Closeup of large thick flesh coloured bald worm with a mushroom shaped head on top of two eggs on a white background',
     n=1,
     size="256x256"
     )
