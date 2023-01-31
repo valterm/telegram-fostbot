@@ -2,6 +2,7 @@ from telegram import Update,User
 from telegram.ext import CallbackContext
 import requests
 from random import randint
+import json
 
 def get_username(user: User) -> str:
     if user.username == 'None' or len(user.username) == 0:
@@ -42,6 +43,9 @@ def message_chat(update: Update, context: CallbackContext, message: str):
 def send_image(update: Update, context: CallbackContext, image_path: str):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(image_path, 'rb'))
 
+def sending_image(update: Update, context: CallbackContext):
+    context.bot.send_chat_action(chat_id=update.effective_chat.id,action='upload_photo')
+
 def start(update: Update, context: CallbackContext):
     user = get_username(update.effective_user)
     msg = f"{user}, vigyázz, mert csúnyán beszélek!"
@@ -51,3 +55,4 @@ def helper(update: Update, context: CallbackContext):
     user = get_username(update.effective_user)
     msg=f"{user}, ha nem tudod kitalálni mire jó ez a bot, nem tudok rajtad segíteni."
     message_chat(update,context,msg)
+
