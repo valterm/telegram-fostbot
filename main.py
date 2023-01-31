@@ -1,8 +1,8 @@
 from telegram import Update,User
 from telegram.ext import Updater,CallbackContext,CommandHandler
 import logging
-import os
 import lib.functions as f
+import lib.globals as g
 import lib.insult as insult
 import lib.dalle as dalle
 
@@ -11,7 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 def main():
 
-    token = os.environ.get('TELEGRAM_BOT_TOKEN')    
+    token = g.telegram_token
 
     updater = Updater(token=token)
     
