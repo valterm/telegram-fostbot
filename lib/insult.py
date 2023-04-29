@@ -1,6 +1,7 @@
 from telegram import Update,User
 from telegram.ext import CallbackContext
 from .functions import *
+from .globals import *
 
 def insult(update: Update, context: CallbackContext):
     insult = get_random_insult()
@@ -13,7 +14,7 @@ def fuckyou(update: Update, context: CallbackContext):
     target = update.message.text
     user = get_username(update.effective_user)
 
-    tags = ['/fuckyou',f'@{os.environ.get("BOT_USERNAME")}']
+    tags = ['/fuckyou',f'@{bot_username}']
     target = strip_input(str(target), tags)
 
     if len(target) == 0:

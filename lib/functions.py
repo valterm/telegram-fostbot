@@ -5,7 +5,7 @@ from random import randint
 import json
 
 def get_username(user: User) -> str:
-    if user.username == 'None' or len(user.username) == 0:
+    if user.username is None:
         username = f"{user.last_name} {user.first_name}"
     else:
         username = f"@{user.username}"
